@@ -1,28 +1,19 @@
 const prompt = require('prompt-sync')();
 
-console.log("=== CONTAGEM INTELIGENTE ===");
+console.log("=== CONTADOR PERSONALIZADO ===");
 
-let contador = 1;
+const inicio = parseInt(prompt("Digite o primeiro Valor: "));
+const fim = parseInt(prompt("Digite o último Valor: "));
+let incremento = parseInt(prompt("Digite o incremento: "));
 
-const inicio = parseInt(prompt("Início: "));
-const fim = parseInt(prompt("Fim: "));
+incremento = Math.abs(incremento);
 
-contador = inicio;
-
-console.log("============================");
-console.log("       C O N T A N D O      ");
-console.log("============================");
+let contador = inicio;
+process.stdout.write("Contagem: ");
 
 if (inicio < fim) {
     while (contador <= fim) {
-        console.log(contador + ".. ");
-        contador = contador + 1
-    }
-} else if (inicio > fim) {
-    while (contador >= fim) {
-        console.log(contador + ".. ")
-        contador = contador - 1
+        process.stdout.write(contador + " ");
+        contador += incremento;
     }
 }
-
-console.log("============================");
