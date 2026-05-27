@@ -1,19 +1,13 @@
 const prompt = require('prompt-sync')();
 
-console.log("=== CONTADOR PERSONALIZADO ===");
-
-const inicio = parseInt(prompt("Digite o primeiro Valor: "));
-const fim = parseInt(prompt("Digite o último Valor: "));
-let incremento = parseInt(prompt("Digite o incremento: "));
-
-incremento = Math.abs(incremento);
-
-let contador = inicio;
-process.stdout.write("Contagem: ");
-
-if (inicio < fim) {
-    while (contador <= fim) {
-        process.stdout.write(contador + " ");
-        contador += incremento;
-    }
+function somador(a, b) {
+    const resultado = a + b;
+    console.log("-----------------------");
+    console.log(`A soma entre ${a} e ${b} é: ${resultado}`);
+    console.log("-----------------------");
 }
+
+let n1 = Number(prompt("Digite o primeiro valor: "));
+let n2 = Number(prompt("Digite o segundo valor: "));
+
+somador(n1, n2);
